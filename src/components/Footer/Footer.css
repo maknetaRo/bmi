@@ -1,0 +1,17 @@
+.footer {
+    font-size: 0.95rem;
+    color: whitesmoke;
+    background-color: black;
+    height: 70px;
+    line-height: 70px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    letter-spacing: 1px;
+  }
+
+.author {
+    color: whitesmoke;
+}
