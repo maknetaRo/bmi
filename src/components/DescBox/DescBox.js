@@ -1,10 +1,16 @@
 import React from 'react';
+import BmiDescription from '../BmiDescription/BmiDescription';
+import { BMI_TEXT } from '../../const';
+import './DescBox.css';
 
-function DescBox() {
+function DescBox(props) {
     return (
-        <article className="text">
+        <section className="text-box">
+            <article className={props.class} >{BMI_TEXT}</article>
+            <BmiDescription />
 
-        </article>
+
+        </section>
     )
 }
 
