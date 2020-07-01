@@ -1,5 +1,13 @@
 .text-box {
+  width: 100%;
+  padding: 3rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 760px) {
+  .text-box {
     width: 50%;
-    padding: 3rem;
-    text-align: left;
+  }
 }
