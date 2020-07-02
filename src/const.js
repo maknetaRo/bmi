@@ -21,7 +21,7 @@ export const BMI_DESC = [
   },
   {
     id: 4,
-    title: "Obesity = 30 - 35",
+    title: "Obesity = 30 - 34.9",
     description: "",
   },
   {

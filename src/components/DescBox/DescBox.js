@@ -5,7 +5,7 @@ import "./DescBox.css";
 
 function DescBox(props) {
   const results = BMI_DESC.map((item) => (
-    <BmiDescription class="range" key={item.id} data={item.title} />
+    <BmiDescription class="range" key={item.id} data={item} />
   ));
   return (
     <section className="text-box">
@@ -13,7 +13,10 @@ function DescBox(props) {
         <h2 className="title-desc">{BMI_TITLE}</h2>
         {BMI_TEXT}
       </article>
-      {results}
+      <article className="result-desc">
+        <h2 className="title-desc">Result</h2>
+        {results}
+      </article>
     </section>
   );
 }
