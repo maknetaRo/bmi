@@ -15,6 +15,7 @@ function DescBox(props) {
       </article>
       <article className="result-desc">
         <h2 className="title-desc">Result</h2>
+        {props.score}
         {results}
       </article>
     </section>
