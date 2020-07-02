@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 function BmiDescription(props) {
-    return (
-        <p className={props.class}>
-            {props.text}
-        </p>
-    )
+  return <p className={props.data.class}>{props.data.titles}</p>;
 }
 
-export default BmiDescription
+export default BmiDescription;

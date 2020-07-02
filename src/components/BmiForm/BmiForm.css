@@ -29,7 +29,8 @@
   line-height: 3;
 }
 
-input[type="number"] {
+input[type="number"],
+input[type="text"] {
   width: 70%;
   line-height: 2.5rem;
   padding-left: 0.75rem;
@@ -37,6 +38,7 @@ input[type="number"] {
   border-radius: 5px 5px 0 0;
   font-size: 1.1rem;
   outline: transparent;
+  text-align: center;
 }
 input[type="number"]:hover,
 input[type="number"]:focus {

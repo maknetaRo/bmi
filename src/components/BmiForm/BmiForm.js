@@ -6,28 +6,37 @@ class BmiForm extends Component {
     super(props);
     this.state = {
       kilos: undefined,
-      cm: undefined,
+      meters: undefined,
       score: null,
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handle1Change = this.handle1Change.bind(this);
+    this.handle2Change = this.handle2Change.bind(this);
   }
 
-  handleSubmit(event) {
-    this.setState({
-      kilos: event.target.kilos,
-      cm: event.target.cm,
-    });
-    this.state.score = (this.state.kilos / this.state.cm ** 2).toString();
-    console.log(this.state.score);
-    event.preventDefault();
+  handle1Change(event) {
+    this.setState({ kilos: event.target.value });
   }
+  handle2Change(event) {
+    this.setState({ meters: event.target.value });
+  }
+
+  countBmi = (event) => {
+    let bmi = Math.round(
+      ((this.state.kilos / this.state.meters ** 2) * 10) / 10
+    );
+    this.setState({ score: bmi });
+    event.preventDefault();
+  };
+  handleFormReset = () => {
+    this.setState(() => this.state);
+  };
 
   render() {
     return (
       <section className="app-form">
         <div className="box">
-          <form className="form" onSubmit={this.handleSubmit}>
+          <form className="form" id="form">
             <label htmlFor="kilos" className="label-box">
               Your weight in kg
             </label>
@@ -35,24 +44,29 @@ class BmiForm extends Component {
               type="number"
               step="0.01"
               id="kilos"
-              value={this.state.kilos}
               required
+              onChange={this.handle1Change}
             />
 
-            <label htmlFor="cm" className="label-box">
+            <label htmlFor="kilos" className="label-box">
               Your height in meters
             </label>
             <input
               type="number"
               step="0.01"
-              id="cm"
-              value={this.state.cm}
+              id="meters"
               required
+              onChange={this.handle2Change}
             />
 
-            <input type="submit" className="submit-btn" value="Submit" />
+            <input
+              type="submit"
+              className="submit-btn"
+              onClick={this.countBmi}
+              value="Submit"
+            />
+            <input type="text" value={this.state.score} readOnly />
           </form>
-          <h3 className="score">{this.state.score}</h3>
         </div>
       </section>
     );
