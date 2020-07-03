@@ -10,16 +10,12 @@ class BmiForm extends Component {
       score: "",
     };
 
-    this.handle1Change = this.handle1Change.bind(this);
-    this.handle2Change = this.handle2Change.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    // this.handle2Change = this.handle2Change.bind(this);
   }
 
-  handle1Change(event) {
-    this.setState({ kilos: event.target.value });
-
-  }
-  handle2Change(event) {
-    this.setState({ meters: event.target.value });
+  handleChange(event, field) {
+    this.setState({ [field]: event.target.value });
 
   }
 
@@ -51,7 +47,7 @@ class BmiForm extends Component {
               step="0.01"
               id="kilos"
               required
-              onChange={this.handle1Change}
+              onChange={(event) => this.handleChange(event, "kilos")}
 
 
             />
@@ -64,7 +60,7 @@ class BmiForm extends Component {
               step="0.01"
               id="meters"
               required
-              onChange={this.handle2Change}
+              onChange={(event) => this.handleChange(event, "meters")}
             />
             <div className="btn-row">
               <input
