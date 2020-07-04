@@ -11,7 +11,7 @@ class BmiForm extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    // this.handle2Change = this.handle2Change.bind(this);
+
   }
 
   handleChange(event, field) {
@@ -27,7 +27,7 @@ class BmiForm extends Component {
     this.setState({ score: bmi });
 
   };
-  resetForm = (event) => {
+  resetForm = () => {
     this.setState({ kilos: "", meters: "", score: "" })
   }
 
