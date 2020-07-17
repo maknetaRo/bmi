@@ -7,6 +7,8 @@ Live: https://maknetaro.github.io/bmi/
 Available Scripts
 
 In the project directory, you can run:
+`npm istall`
+and then 
 `npm start`
 
 Runs the app in the development mode.
